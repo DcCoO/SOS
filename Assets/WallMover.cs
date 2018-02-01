@@ -2,27 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Led : MonoBehaviour {
-	public float speed;
+public class WallMover : MonoBehaviour {
+
+	BoxCollider2D box;
 	SpriteRenderer sr;
-	bool acendendo = false;
-	// Use this for initialization
+
+	public Vector2 position;
+
 	void Start () {
+		box = GetComponent<BoxCollider2D> ();
 		sr = GetComponent<SpriteRenderer> ();
 		Resize ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (!acendendo) {
-			sr.color -= new Color (speed, speed, speed, 0) * Time.deltaTime;
-			if (sr.color.r < 0.5f)
-				acendendo = true;
-		} else {
-			sr.color += new Color (speed, speed, speed, 0) * Time.deltaTime;
-			if (sr.color.r > 1f)
-				acendendo = false;
-		}
+		
 	}
 
 	void Resize(){
@@ -44,6 +39,12 @@ public class Led : MonoBehaviour {
 		yHeight.y=worldScreenHeight / height;
 		transform.localScale=yHeight;
 		//transform.localScale.y = worldScreenHeight / height;
+
+		transform.position += new Vector3 (
+			transform.position.x + (position.x * worldScreenWidth),
+			transform.position.y + (position.y * worldScreenHeight),
+			0
+		);
 
 	}
 }
