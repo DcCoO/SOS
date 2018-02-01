@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour {
 
 	float time = 5.5f;
 	float spawnTime = 6;
-	float reduceSpawn = 20;
+	float reduceSpawn = 10;
 	float reduceTime = 0;
 	float k1 = 5, k2 = 2;
 
@@ -50,7 +50,7 @@ public class Spawner : MonoBehaviour {
 		}
 
 		if (reduceTime > reduceSpawn) {
-			spawnTime -= 0.25f;
+			spawnTime = Mathf.Max(1, spawnTime - 0.25f);
 			reduceTime = 0;
 		}
 

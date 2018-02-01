@@ -32,7 +32,7 @@ public class Plane : MonoBehaviour {
 	void Start () {
 		path = new List<GameObject>();
 		distance = 0.2f;
-		moveSpeed = 0.5f;
+		moveSpeed = 0.4f;
 		turnSpeed = 2f;
 		GetComponent<CircleCollider2D> ().enabled = false;
 	}

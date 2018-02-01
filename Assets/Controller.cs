@@ -16,6 +16,7 @@ public class Controller : MonoBehaviour {
 	public GameObject sound;
 	// Use this for initialization
 	void Start () {
+		style.fontSize = (int)((float)Screen.width * 36.0f / 456.0f);
 		highscore.text = "High Score: " + PlayerPrefs.GetInt ("score");
 	}
 	
