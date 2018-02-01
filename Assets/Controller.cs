@@ -13,6 +13,7 @@ public class Controller : MonoBehaviour {
 	public GameObject heart;
 	public int score;
 
+	public GameObject sound;
 	// Use this for initialization
 	void Start () {
 		highscore.text = "High Score: " + PlayerPrefs.GetInt ("score");
@@ -55,6 +56,7 @@ public class Controller : MonoBehaviour {
 		highscore.text = "High Score: " + PlayerPrefs.GetInt ("score");
 		highscore.enabled = true;
 		GameObject.Find ("Spawner").GetComponent<Spawner> ().Stop ();
+		Instantiate (sound, Vector3.zero, Quaternion.identity);
 	}
 
 	public GUIStyle style;

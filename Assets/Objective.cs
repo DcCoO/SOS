@@ -6,6 +6,8 @@ public class Objective : MonoBehaviour {
 
 	public int ID;
 
+	public GameObject sound;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -20,7 +22,8 @@ public class Objective : MonoBehaviour {
 		if (col.gameObject.tag == "plane") {
 			if (this.ID == col.gameObject.GetComponent<Plane> ().ID) {
 				GameObject.Find ("Controller").GetComponent<Controller> ().score++;
-				col.gameObject.GetComponent<Plane> ().Explode ();
+				Instantiate (sound, Vector3.zero, Quaternion.identity);
+				col.gameObject.GetComponent<Plane> ().Land ();
 				Destroy (gameObject);
 			}
 		}

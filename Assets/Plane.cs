@@ -25,6 +25,8 @@ public class Plane : MonoBehaviour {
 
 	bool active = false;
 
+	public GameObject sound;
+
 	float offset = 17;
 	// Use this for initialization
 	void Start () {
@@ -93,6 +95,14 @@ public class Plane : MonoBehaviour {
 		foreach (GameObject g in path)
 			Destroy (g);
 		Destroy(GameObject.Find("Target " + this.ID.ToString()));
+		Instantiate (sound, Vector3.zero, Quaternion.identity);
+		Destroy (gameObject);
+	}
+
+	public void Land(){
+		foreach (GameObject g in path)
+			Destroy (g);
+		Destroy(GameObject.Find("Target " + this.ID.ToString()));
 		Destroy (gameObject);
 	}
 
@@ -106,10 +116,12 @@ public class Plane : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col){
 		if (col.gameObject.tag == "plane") {
+			GetComponent<AudioSource> ().Play ();
 			GameObject.Find ("Controller").GetComponent<Controller> ().Hit ();
 			Explode ();
 		}
 		else if(col.gameObject.tag == "wall") {
+			GetComponent<AudioSource> ().Play ();
 			GameObject.Find ("Controller").GetComponent<Controller> ().Hit ();
 			Explode ();
 		}

@@ -87,6 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
+  sound: {fileID: 1408499829574440, guid: da9fcef4ca7f5e94fb8098ee88db33d2, type: 2}
 --- !u!212 &212361592089293318
 SpriteRenderer:
   m_ObjectHideFlags: 1
