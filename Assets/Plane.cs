@@ -23,8 +23,6 @@ public class Plane : MonoBehaviour {
 
 	public GameObject objective;
 
-	bool active = false;
-
 	public GameObject sound;
 
 	float offset = 17;
@@ -34,21 +32,10 @@ public class Plane : MonoBehaviour {
 		distance = 0.2f;
 		moveSpeed = 0.4f;
 		turnSpeed = 2f;
-		GetComponent<CircleCollider2D> ().enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		if (!active) {
-			Vector2 screenPos = Camera.main.WorldToScreenPoint (transform.position);
-			active = 
-				offset <= screenPos.x && 
-				screenPos.x <= Screen.width - offset && 
-				offset <= screenPos.y && 
-				screenPos.y <= Screen.height - offset;
-			if(active) GetComponent<CircleCollider2D> ().enabled = true;
-		}
 		
 		if (drawing) {
 			Vector2 currMouse = worldPos ();
@@ -125,5 +112,9 @@ public class Plane : MonoBehaviour {
 			GameObject.Find ("Controller").GetComponent<Controller> ().Hit ();
 			Explode ();
 		}
+	}
+
+	void OnTriggerExit2D(){
+		GetComponent<CircleCollider2D> ().isTrigger = false;
 	}
 }
