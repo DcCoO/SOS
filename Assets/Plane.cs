@@ -115,7 +115,16 @@ public class Plane : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerExit2D(){
+	void OnTriggerExit2D(Collider2D col){
+		if (col.gameObject.tag == "wall") {
+			StartCoroutine(StartCollisionAfter (0.7f));
+		} else {
+			StartCoroutine(StartCollisionAfter (2.1f));
+		}
+	}
+
+	IEnumerator StartCollisionAfter(float time){
+		yield return new WaitForSeconds(time);
 		GetComponent<CircleCollider2D> ().isTrigger = false;
 	}
 }

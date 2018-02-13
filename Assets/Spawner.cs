@@ -69,7 +69,14 @@ public class Spawner : MonoBehaviour {
 		Vector2 br = world(Screen.width, Screen.height);
 
 		if (q == 0) {
-			return new Vector2 (Random.Range(tl.x, tr.x), Random.Range(tl.y, bl.y));
+			Vector2 next = new Vector2 (Random.Range(tl.x + 0.2f, tr.x - 0.2f), Random.Range(tl.y + 0.2f, bl.y - 0.2f));
+
+			Plane[] planes = FindObjectsOfType<Plane> ();
+			foreach (Plane plane in planes) {
+				if (Vector2.Distance (next, plane.transform.position) < 1)
+					return randomPosition (0);
+			}
+			return next;
 		}
 		else if(q == 1) {
 			return new Vector2 (Random.Range(tl.x - k1, tl.x - k2), Random.Range(tl.y - k1, bl.y + k1));
