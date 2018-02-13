@@ -10,7 +10,7 @@ public class Objective : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		//transform.GetChild (0).gameObject.GetComponent<Light> ().color = GetComponent<SpriteRenderer> ().color;
 	}
 	
 	// Update is called once per frame

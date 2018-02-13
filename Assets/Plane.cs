@@ -103,6 +103,7 @@ public class Plane : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col){
 		if (col.gameObject.tag == "plane") {
+			print ("BATEU");
 			GetComponent<AudioSource> ().Play ();
 			GameObject.Find ("Controller").GetComponent<Controller> ().Hit ();
 			Explode ();

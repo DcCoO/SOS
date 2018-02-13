@@ -48,9 +48,9 @@ TagManager:
   - name: background
     uniqueID: 1018682139
     locked: 0
-  - name: plane
-    uniqueID: 306247909
-    locked: 0
   - name: objective
     uniqueID: 639456241
+    locked: 0
+  - name: plane
+    uniqueID: 306247909
     locked: 0

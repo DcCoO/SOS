@@ -4,29 +4,30 @@ using UnityEngine;
 
 public class Led : MonoBehaviour {
 	public float speed;
-	SpriteRenderer sr;
+	Light lt;
 	bool acendendo = false;
 	// Use this for initialization
 	void Start () {
-		sr = GetComponent<SpriteRenderer> ();
+		lt = GetComponent<Light> ();
 		Resize ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (!acendendo) {
-			sr.color -= new Color (speed, speed, speed, 0) * Time.deltaTime;
-			if (sr.color.r < 0.5f)
+			lt.intensity -= speed * Time.deltaTime;
+			if (lt.intensity < 0.01f)
 				acendendo = true;
 		} else {
-			sr.color += new Color (speed, speed, speed, 0) * Time.deltaTime;
-			if (sr.color.r > 1f)
+			lt.intensity += speed * Time.deltaTime;
+			if (lt.intensity > 0.5f)
 				acendendo = false;
 		}
 	}
 
 	void Resize(){
 
+		SpriteRenderer sr = GetComponent<SpriteRenderer> ();
 		transform.localScale=new Vector3(1,1,1);
 
 		float width=sr.sprite.bounds.size.x;

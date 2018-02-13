@@ -1,15 +1,16 @@
 fileFormatVersion: 2
-guid: a3209c0a961f06f4d805863877d3eca4
-timeCreated: 1517425975
+guid: b42de7a9288425f49b7c20bb6e41d425
+timeCreated: 1518541355
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: target_0
-    21300002: target_1
-    21300004: target_2
-    21300006: target_3
-    21300008: target_4
-    21300010: target_5
+    21300000: Plane 1_0
+    21300002: Plane 1_1
+    21300004: Plane 1_2
+    21300006: Plane 1_3
+    21300008: Plane 1_4
+    21300010: Plane 1_5
+    21300012: Plane 1_6
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -82,16 +83,6 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - buildTarget: iPhone
-    maxTextureSize: 8192
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   - buildTarget: Android
     maxTextureSize: 8192
     resizeAlgorithm: 0
@@ -106,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: target_0
+      name: Plane 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 225
-        height: 225
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,13 +111,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: target_1
+      name: Plane 1_1
       rect:
         serializedVersion: 2
-        x: 225
+        x: 64
         y: 0
-        width: 225
-        height: 225
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,13 +125,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: target_2
+      name: Plane 1_2
       rect:
         serializedVersion: 2
-        x: 450
+        x: 128
         y: 0
-        width: 225
-        height: 225
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,13 +139,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: target_3
+      name: Plane 1_3
       rect:
         serializedVersion: 2
-        x: 675
+        x: 192
         y: 0
-        width: 225
-        height: 225
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,13 +153,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: target_4
+      name: Plane 1_4
       rect:
         serializedVersion: 2
-        x: 900
+        x: 256
         y: 0
-        width: 225
-        height: 225
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,13 +167,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: target_5
+      name: Plane 1_5
       rect:
         serializedVersion: 2
-        x: 1125
+        x: 320
         y: 0
-        width: 225
-        height: 225
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Plane 1_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
