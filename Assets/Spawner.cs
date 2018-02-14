@@ -73,7 +73,7 @@ public class Spawner : MonoBehaviour {
 
 			Plane[] planes = FindObjectsOfType<Plane> ();
 			foreach (Plane plane in planes) {
-				if (Vector2.Distance (next, plane.transform.position) < 1)
+				if (Vector2.Distance (next, plane.transform.position) < 2)
 					return randomPosition (0);
 			}
 			return next;
@@ -93,7 +93,12 @@ public class Spawner : MonoBehaviour {
 	}
 
 	Color randomColor(){
-		return new Color (Random.value, Random.value, Random.value, 1);
+		Color c = new Color (Random.value, Random.value, Random.value, 1);
+		float h, s, v;
+		Color.RGBToHSV (c, out h, out s, out v);
+		if (v < 0.4f)
+			return randomColor ();
+		return c;
 	}
 
 	Vector2 world(float x, float y){
